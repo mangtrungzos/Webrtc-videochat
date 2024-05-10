@@ -1,18 +1,29 @@
-import CreateButton from '../components/common/Join';
+import { CreateButton } from '../components/common/Join';
 import '../App.css';
 import { useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
-function Home() {
+export const Home = () => {
   const navigate = useNavigate();
-  const ref = useRef<any>()
+  const ref = useRef<any>();
   const joinRoom = () => {
-    navigate(`/room/${ref.current.value}`)
+    navigate(`/room/${ref.current.value}`);
   }
   return (
     <div className="App flex flex-col items-center justify-center w-screen h-screen gap-5 px-[40%]">
-      <input className='border rounded border-fuchsia-600 px-10 py-2 w-100' ref={ref}/>
+      <svg xmlns="http://www.w3.org/2000/svg" 
+        width= "2.25em"
+        height="1em" 
+        viewBox="0 0 256 249">
+          <path 
+            fill="#f60" 
+            d="M142.077 191.087c0 31.806-25.782 57.592-57.588 57.592c-31.81 0-57.593-25.786-57.593-57.592c0-31.806 25.782-57.592 57.593-57.592c31.806 0 57.588 25.786 57.588 57.592"/><path fill="#fc0" d="M255.98 110.459c0 31.802-25.782 57.592-57.588 57.592c-31.81 0-57.592-25.79-57.592-57.592c0-31.807 25.781-57.597 57.592-57.597c31.806 0 57.588 25.79 57.588 57.597"/><path fill="#0089cc" d="M115.2 109.18c0 31.802-25.781 57.593-57.592 57.593c-31.802 0-57.588-25.79-57.588-57.592c0-31.807 25.786-57.597 57.588-57.597c31.81 0 57.592 25.79 57.592 57.597"/><path fill="#009939" d="M230.386 191.087c0 31.806-25.782 57.592-57.597 57.592c-31.802 0-57.588-25.786-57.588-57.592c0-31.806 25.786-57.592 57.588-57.592c31.815 0 57.597 25.786 57.597 57.592"/><path fill="#bf0000" d="M185.592 57.985c0 31.806-25.786 57.592-57.592 57.592c-31.806 0-57.592-25.786-57.592-57.592C70.408 26.179 96.194.392 128 .392c31.806 0 57.592 25.787 57.592 57.593"/><path fill="#fc0007" d="M140.799 110.458c0 1.212.105 2.398.181 3.593c25.546-5.894 44.61-28.733 44.61-56.068c0-1.212-.105-2.402-.18-3.597c-25.546 5.897-44.611 28.737-44.611 56.072"/><path fill="#1cd306" d="M148.397 138.975c9.925 17.352 28.576 29.075 49.997 29.075c8.73 0 16.976-2.001 24.393-5.48c-9.92-17.35-28.572-29.074-49.997-29.074c-8.73 0-16.976 2-24.393 5.48"/><path fill="#0f7504" d="M115.2 191.087c0 14.071 5.058 26.947 13.442 36.948c8.376-10 13.434-22.877 13.434-36.948c0-14.07-5.058-26.947-13.434-36.948c-8.384 10.001-13.442 22.877-13.442 36.948"/><path fill="#0c5e87" d="M34.807 162.057a57.324 57.324 0 0 0 22.801 4.716c21.21 0 39.688-11.496 49.685-28.564a57.336 57.336 0 0 0-22.801-4.711c-21.21 0-39.692 11.495-49.685 28.56"/><path fill="#6b0001" d="M70.655 53.126c-.136 1.604-.25 3.217-.25 4.86c0 27.313 19.036 50.132 44.552 56.05c.13-1.604.245-3.217.245-4.855c0-27.314-19.032-50.14-44.547-56.055"/><path fill="#fff" d="M76.03 183.96h-9.009c-7.953 0-14.42-6.446-14.42-14.379V88.035c0-7.932 6.467-14.383 14.42-14.383H179.99c7.954 0 14.417 6.45 14.417 14.383v81.546c0 7.933-6.463 14.38-14.417 14.38h-38.484L64.29 221.81z"/>
+      </svg>
+
+      <input 
+       className=' text-center border rounded border-blue-500 px-10 py-2 w-100' placeholder='Enter room id' ref={ref}
+      />
       <button onClick = { joinRoom } 
-        className='bg-fuchsia-700 p-4 rounded-lg text-xl hover:bg-fuchsia-800 text-white w-[100%]'>
+        className='bg-blue-500 p-4 rounded-lg text-xl hover:bg-blue-600 text-white w-[100%]'>
           join Meet
       </button>
       <CreateButton/>
@@ -20,4 +31,3 @@ function Home() {
   );
 }
 
-export default Home;

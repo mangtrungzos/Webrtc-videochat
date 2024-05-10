@@ -1,7 +1,7 @@
-import { useContext } from "react"
-import { IMessage } from "../../types/chat"
-import { RoomContext } from "../../context/RoomContext"
-import classNames from "classnames"
+import { useContext } from "react";
+import { IMessage } from "../../types/chat";
+import { RoomContext } from "../../context/RoomContext";
+import classNames from "classnames";
 
 export const ChatBubble: React.FC<{message:IMessage}> = ({message}) => {
     const {me} = useContext(RoomContext);
@@ -19,5 +19,5 @@ export const ChatBubble: React.FC<{message:IMessage}> = ({message}) => {
 
             </div>
         </div>
-    )
-}
+    );
+};

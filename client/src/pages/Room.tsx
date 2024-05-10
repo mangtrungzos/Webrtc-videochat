@@ -6,8 +6,9 @@ import { PeerState } from "../reducers/peerReducer";
 import { ShareScreenButtoon } from "../components/common/ShareScreenButton";
 import { ChatButton } from "../components/common/ChatButton";
 import { Chat } from "../components/chat/Chat";
+import { MicroButton } from "../components/common/MicroButton";
 
-function Room() {
+export const Room = () => {
   const { id } = useParams()
   const { 
     ws, 
@@ -19,14 +20,15 @@ function Room() {
     shareScreen, 
     screenStream, 
     screenSharingId, 
-    setRoomId 
-  } = useContext(RoomContext)
+    setRoomId,
+    toggleMicrophone
+  } = useContext(RoomContext);
 
   useEffect(() => {
     if (me) me.on('open', () => {
-      ws.emit('join-room', { roomId: id, peerId: me._id })
-    })
-  }, [me, id])
+      ws.emit('join-room', { roomId: id, peerId: me._id });
+    });
+  }, [me, id, ws]);
 
   useEffect(() => {
     setRoomId(id);
@@ -59,14 +61,15 @@ function Room() {
           </div>)
         }
 
+        
+
       </div>
 
-      <div className="fixed bottom-0 px-6 py-5 h-28 w-full flex justify-center border-t-2">
+      <div className="fixed bottom-0 px-3 py-3 h-20 w-full flex justify-center border-t-2">
+        <MicroButton onClick={toggleMicrophone}></MicroButton>
         <ShareScreenButtoon onClick={shareScreen} />
         <ChatButton onClick={toggleChat} />
       </div>
     </div>
   );
 }
-
-export default Room;

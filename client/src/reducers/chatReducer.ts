@@ -13,10 +13,10 @@ type ChatAction =
 }
 | {
     type: typeof ADD_HISTORY;
-    payload: { history: IMessage[]}
+    payload: { history: IMessage[]};
 } | {
     type: typeof TOGGLE_CHAT;
-    payload: {isOpen: boolean}
+    payload: {isOpen: boolean};
 }
 
 export const chatReducer = (state: ChatState, action: ChatAction) => {
@@ -38,5 +38,5 @@ export const chatReducer = (state: ChatState, action: ChatAction) => {
             }
         default:
             return state
-    }
-}
+    };
+};

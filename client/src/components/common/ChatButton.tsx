@@ -3,7 +3,7 @@ import React from "react";
 export const ChatButton: React.FC<{ onClick: () => void }> = ({ onClick }) => {
     return (
         <button onClick = { onClick } 
-            className="bg-fuchsia-700 p-4 rounded-lg text-xl hover:bg-fuchsia-800 text-white">
+            className="bg-slate-500 px-4 rounded-full text-xl hover:bg-slate-600 text-white">
             <svg xmlns="http://www.w3.org/2000/svg" 
                 fill="none" 
                 viewBox="0 0 24 24" 
@@ -18,5 +18,5 @@ export const ChatButton: React.FC<{ onClick: () => void }> = ({ onClick }) => {
                 />
             </svg>
         </button>
-    )
-}
+    );
+};

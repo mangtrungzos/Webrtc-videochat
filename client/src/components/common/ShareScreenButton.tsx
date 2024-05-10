@@ -3,14 +3,14 @@ import React from "react";
 export const ShareScreenButtoon: React.FC<{onClick:()=> void}> = ({ onClick}) => {
     return (
         <button onClick={onClick} 
-            className="bg-fuchsia-700 p-4 mx-2 rounded-lg text-xl hover:bg-fuchsia-800 text-white">
+            className="bg-slate-500 px-4 mx-2 rounded-full text-xl hover:bg-slate-600 text-white">
             <svg xmlns="http://www.w3.org/2000/svg" 
                 fill="none" 
                 viewBox="0 0 24 24" 
                 strokeWidth={1.5} 
                 stroke="currentColor" 
-                className="w-6 h-6"
-            >
+                className="w-5 h-5"
+            >   
                 <path 
                     strokeLinecap="round" 
                     strokeLinejoin="round" 
@@ -18,5 +18,5 @@ export const ShareScreenButtoon: React.FC<{onClick:()=> void}> = ({ onClick}) =>
                 />
             </svg>
         </button>
-    )
-}
+    );
+};
