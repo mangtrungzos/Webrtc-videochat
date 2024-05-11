@@ -1,21 +1,28 @@
 import { useContext, useState } from "react";
 import { RoomContext } from "../../context/RoomContext";
 
+
 export const ChatInput: React.FC = () => {
     const [message, setMessage] = useState("");
-    const { sendMessage } = useContext(RoomContext)
+    const { sendMessage } = useContext(RoomContext);
+    const { roomId } = useContext(RoomContext);
     return (
         <div>
             <form onSubmit={(e) => {
                 e.preventDefault();
-                sendMessage(message);
-                setMessage('');
+                sendMessage(message, roomId);
+                setMessage("");
             }}>
                 <div className="flex gap-5">
 
-                    <input className="border rounded-full px-2 py-2" onChange={e => setMessage(e.target.value)} value={message} />
+                    <input 
+                        className="border rounded-full px-2 py-2" 
+                        onChange={(e) => setMessage(e.target.value)} 
+                        value={message} 
+                    />
 
-                    <button className="bg-slate-300 p-4 rounded-lg text-xl hover:bg-slate-400 text-white w-[100%]" 
+                    <button 
+                        className="bg-slate-300 p-4 rounded-lg text-xl hover:bg-slate-400 text-white w-[100%]" 
                         type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" 
                                 fill="none" 

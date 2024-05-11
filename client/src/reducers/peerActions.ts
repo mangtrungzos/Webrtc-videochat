@@ -12,3 +12,4 @@ export const removePeerAction = (peerId: string) =>  ({
     type: REMOVE_USER, 
     payload:{ peerId }
 });
+

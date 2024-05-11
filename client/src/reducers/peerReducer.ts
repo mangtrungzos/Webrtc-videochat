@@ -1,5 +1,5 @@
 import { MediaConnection } from "peerjs";
-import { ADD_USER, REMOVE_USER } from "./peerActions";
+import {ADD_USER, REMOVE_USER } from "./peerActions";
 
 export type PeerState = Record<string, {stream: MediaStream,call: MediaConnection}>;
 

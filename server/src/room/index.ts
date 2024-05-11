@@ -65,7 +65,7 @@ export const roomHandler = (socket: Socket) => {
         console.log(message);
         if(!chats[roomId]) chats[roomId] = [message];
         chats[roomId].push(message);
-        
+
         socket.to(roomId).emit("add-message", message);
     };
 

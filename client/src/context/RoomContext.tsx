@@ -8,6 +8,8 @@ import { addPeerAction, removePeerAction } from '../reducers/peerActions';
 import { IMessage } from '../types/chat';
 import { chatReducer } from '../reducers/chatReducer';
 import { addHistoryAction, addMessageAction, toggleChatAction } from '../reducers/chatActions';
+// import { UserContext } from "./UserContext";
+// import { IPeer } from '../types/peer';
 
 
 export const RoomContext = createContext<any>(null);
@@ -17,6 +19,7 @@ export const RoomProvider = ({ children }: any) => {
     const [me, setMe] = useState<Peer>();
     const [stream, setStream] = useState<MediaStream>();
     const [screenStream, setScreenStream] = useState<MediaStream>();
+    // const { userName, userId } = useContext(UserContext);
     const [peers, dispatch] = useReducer(peerReducer, {});
     const [screenSharingId, setScreenSharingId] = useState<string>("");
     const [roomId, setRoomId] = useState<string>("");
@@ -30,10 +33,13 @@ export const RoomProvider = ({ children }: any) => {
         navigate(`room/${roomId}`);
     };
 
-    const getUsers = ({ participants }: { participants: string }) => {
-        // console.log(participants);
-
-    };
+    // const getUsers = ({
+    //     participants,
+    // }: {
+    //     participants: Record<string, IPeer>;
+    // }) => {
+    //     dispatch(addAllPeersAction(participants));
+    // };
 
     const removePeer = (peerId: string) => {
         if( peerId === screenSharingId ){
@@ -133,7 +139,7 @@ export const RoomProvider = ({ children }: any) => {
         }
 
         ws.on("room-created", enterRoom);
-        ws.on('get-users', getUsers);
+        // ws.on('get-users', getUsers);
         ws.on('user-disconnected', removePeer);
         ws.on('user-started-sharing', (peerId) => setScreenSharingId(peerId));
         ws.on('user-stopped-sharing',()=>setScreenSharingId(""));
@@ -142,7 +148,7 @@ export const RoomProvider = ({ children }: any) => {
 
         return () => {
             ws.off("room-created");
-            ws.off('get-users');
+            // ws.off('get-users');
             ws.off("user-joined");
             ws.off("user-disconnected");
             ws.off("user-shared-screen");
