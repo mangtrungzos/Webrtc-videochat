@@ -98,10 +98,10 @@ export const RoomProvider = ({ children }: any) => {
         }
     };
     
-    const sendMessage = (message: string) => {
+    const sendMessage = (message: string, roomId: string) => {
         const messageData :IMessage = {
             content: message,
-            timestamp: new Date().getTime().toString(),
+            timestamp: new Date().getTime(),
             author: me?.id || "",
         }
         chatDispatch(addMessageAction(messageData));

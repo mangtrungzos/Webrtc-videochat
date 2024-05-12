@@ -6,6 +6,7 @@ import { RoomProvider } from './context/RoomContext';
 import { Home } from './pages/Home';
 import { Room } from './pages/Room';
 
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

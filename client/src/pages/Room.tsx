@@ -66,7 +66,7 @@ export const Room = () => {
       </div>
 
       <div className="fixed bottom-0 px-3 py-3 h-20 w-full flex justify-center border-t-2">
-        <MicroButton onClick={toggleMicrophone}></MicroButton>
+        <MicroButton onClick={toggleMicrophone}/>
         <ShareScreenButtoon onClick={shareScreen} />
         <ChatButton onClick={toggleChat} />
       </div>
