@@ -17,7 +17,7 @@ export const ChatBubble: React.FC<{message:IMessage}> = ({message}) => {
                 "bg-red-300":!isSelf
             })}
             >
-               {message.content}    
+                   {message.content}    
                <div>
                     <div className={classNames("text-xs opacity-50",{
                         "text-right": isSelf,

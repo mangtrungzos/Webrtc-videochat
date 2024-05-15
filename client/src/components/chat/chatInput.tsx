@@ -5,19 +5,20 @@ import { RoomContext } from "../../context/RoomContext";
 export const ChatInput: React.FC = () => {
     const [message, setMessage] = useState("");
     const { sendMessage } = useContext(RoomContext);
-    const { roomId } = useContext(RoomContext);
+    // const { roomId } = useContext(RoomContext);
     return (
         <div>
             <form onSubmit={(e) => {
                 e.preventDefault();
-                sendMessage(message, roomId);
+                // sendMessage(message, roomId);
+                sendMessage(message);
                 setMessage("");
             }}>
                 <div className="flex gap-5">
 
                     <input 
                         className="border rounded-full px-2 py-2" 
-                        onChange={(e) => setMessage(e.target.value)} 
+                        onChange={e => setMessage(e.target.value)} 
                         value={message} 
                     />
 

@@ -98,14 +98,14 @@ export const RoomProvider = ({ children }: any) => {
         }
     };
     
-    const sendMessage = (message: string, roomId: string) => {
-        const messageData :IMessage = {
+    const sendMessage = (message: string) => {
+        const messageData:  IMessage = {
             content: message,
             timestamp: new Date().getTime(),
-            author: me?.id || "",
+            author: me?.id,
         }
         chatDispatch(addMessageAction(messageData));
-        ws.emit("send-message",roomId,messageData);
+        ws.emit("send-message", roomId, messageData);
     }
 
     const addMessage = (message: IMessage) => {
@@ -124,7 +124,7 @@ export const RoomProvider = ({ children }: any) => {
 
     const toggleMicrophone = () => {
         setMicIsOn(!mic);
-      };
+    };
 
     useEffect(() => {
         const meId = uuidV4();

@@ -14,7 +14,8 @@ type ChatAction =
 | {
     type: typeof ADD_HISTORY;
     payload: { history: IMessage[]};
-} | {
+} 
+| {
     type: typeof TOGGLE_CHAT;
     payload: {isOpen: boolean};
 }

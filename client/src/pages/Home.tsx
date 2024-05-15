@@ -24,7 +24,7 @@ export const Home = () => {
       />
       <button onClick = { joinRoom } 
         className='bg-blue-500 p-4 rounded-lg text-xl hover:bg-blue-600 text-white w-[100%]'>
-          join Meet
+          Join Meet
       </button>
       <CreateButton/>
     </div>
