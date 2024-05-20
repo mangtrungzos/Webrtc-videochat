@@ -12,8 +12,8 @@ export const ChatBubble: React.FC<{message:IMessage}> = ({message}) => {
             "pl-10 justify-end": isSelf,
             "pr-10 jusitfy-start": !isSelf
         })}>
-            <div className={classNames("inline-block py-2 px-4 rounded",{
-                "bg-red-200": isSelf,
+            <div className={classNames("inline-block py-2 px-5 rounded-l-3xl rounded-br-3xl",{
+                "bg-indigo-400": isSelf,
                 "bg-red-300":!isSelf
             })}
             >

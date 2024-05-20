@@ -3,7 +3,7 @@ import React from "react";
 export const MicroButton: React.FC<{ onClick: () => void }> = ({ onClick }) => {
     return (
         <button onClick = { onClick } 
-            className="bg-slate-500 px-4 rounded-full text-xl hover:bg-slate-600 text-white">
+            className="bg-neutral-900 px-4 rounded-full text-xl hover:bg-neutral-800 text-white">
             <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 fill="none" 

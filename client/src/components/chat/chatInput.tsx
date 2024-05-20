@@ -17,13 +17,13 @@ export const ChatInput: React.FC = () => {
                 <div className="flex gap-5">
 
                     <input 
-                        className="border rounded-full px-2 py-2" 
+                        className="border rounded-t-2xl rounded-b-2xl px-2 py-2 border-slate-950 bg-black text-white" 
                         onChange={e => setMessage(e.target.value)} 
                         value={message} 
                     />
 
                     <button 
-                        className="bg-slate-300 p-4 rounded-lg text-xl hover:bg-slate-400 text-white w-[100%]" 
+                        className="bg-slate-500 p-3 rounded-t-2xl rounded-b-2xl text-xl hover:bg-slate-600 text-white w-[100%]" 
                         type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" 
                                 fill="none" 

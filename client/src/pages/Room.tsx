@@ -41,7 +41,7 @@ export const Room = () => {
 
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-black">
       <div className="flex grow">
         {screenSharingId && (
           <div className="w-4/5 pr-4">
@@ -56,7 +56,7 @@ export const Room = () => {
           ))}
         </div>
         {
-          chat.isChatOpen && (<div className="border-l-2 z-50 py-28">
+          chat.isChatOpen && (<div className="ml-9 mr-9 mt-16 mb-16 rounded-t-2xl rounded-b-2xl z-50 py-4 bg-neutral-900">
             <Chat />
           </div>)
         }
