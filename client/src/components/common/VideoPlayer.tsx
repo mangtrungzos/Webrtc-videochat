@@ -8,7 +8,7 @@ export const VideoPlayer: React.FC<{stream: MediaStream}>  =({stream}) => {
     return (
         <div className="">
             {/* <video ref={videoRef} autoPlay /> */}
-            <video ref={videoRef} autoPlay muted={true}/>
+            <video className="rounded-2xl" ref={videoRef} autoPlay muted={true}/>
         </div>
     );
 };

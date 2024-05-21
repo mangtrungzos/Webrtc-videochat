@@ -48,7 +48,7 @@ export const Room = () => {
             <VideoPlayer stream={screenSharingVideo} />
           </div>
         )}
-        <div className={`grid gap-4 ${screenSharingId ? "w-1/5 grid-col-1" : "grid-cols-4"}`}>
+        <div className={`grid gap-4 mt-16 ml-9 mr-2 ${screenSharingId ? "w-1/5 grid-col-1" : "grid-cols-2"}`}>
           <VideoPlayer stream={stream} />
           {Object.values(peersToShow as PeerState).map((peer, ind) => (
             <VideoPlayer key={ind} stream={peer.stream} />
@@ -65,7 +65,8 @@ export const Room = () => {
 
       </div>
 
-      <div className="fixed bottom-0 px-3 py-3 h-20 w-full flex justify-center border-t-2">
+      {/* <div className="fixed bottom-0 px-3 py-3 h-20 w-full flex justify-center border-t-2"> */}
+      <div className="fixed bottom-0 px-3 py-3 h-20 w-full flex justify-center">
         <MicroButton onClick={toggleMicrophone}/>
         <ShareScreenButtoon onClick={shareScreen} />
         <ChatButton onClick={toggleChat} />
