@@ -1,3 +1,5 @@
+# Install Yarn 
+- Yarn init
 # How to run this Project WebRTCVideoChatApp
 - Client: yarn start
 - Server: yarn dev
